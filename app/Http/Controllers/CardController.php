@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Card;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CardController extends Controller
 {
@@ -94,5 +95,18 @@ class CardController extends Controller
         $card->delete();
 
         return redirect()->action('CardController@index');
+    }
+
+    // Generate and respond with business card containing the user's name.
+    public function generate_svg(Card $card)
+    {
+        $user = Auth::user();
+
+        $svg_image_source = $card->get_svg_for_name($user->name);
+
+        return response()
+            ->make($svg_image_source)
+            ->header('Content-Type', 'image/svg+xml')
+            ->header('Content-Length', strlen($svg_image_source));
     }
 }
