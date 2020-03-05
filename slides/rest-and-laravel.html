@@ -1,0 +1,720 @@
+<!DOCTYPE html><html lang="de-DE"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:transparent;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTBMMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMzIgOTBsNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTQwIDcwSDIwVjUwbTIwIDBMMjAgNzBtNDAtNDBoMjB2MjBtLTIwIDBsMjAtMjAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTIwIDUwaDIwdjIwbS0yMCAwbDIwLTIwbTQwIDBINjBWMzBtMjAgMEw2MCA1MCIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS13aWR0aDo1cHh9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImEiIGQ9Ik0yMCA2MGgtNWE1IDUgMCAwMS01LTVWMjBhNSA1IDAgMDE1LTVoNjBhNSA1IDAgMDE1IDV2NU0zMCA4NWg2MCIvPjxyZWN0IHg9IjMwIiB5PSIzNSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjQwIiByeD0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIi8+PHJlY3QgY2xhc3M9ImEiIHg9IjMwIiB5PSIzNSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjQwIiByeD0iNSIvPjxwYXRoIGNsYXNzPSJhIiBkPSJNNDAgNTBoNDBNNDAgNjBoMzAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide.bespoke-marp-active{opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{bottom:0;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:rgba(0,0,0,.65);border-radius:7px;bottom:50px;color:#fff;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap;z-index:1;will-change:transform}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{flex:0 0 0;background:#0288d1;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:transparent}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{height:100%;left:0;position:absolute;top:0;width:100%;display:grid;grid-template-columns:2fr 1fr;grid-template-rows:minmax(140px,1fr) 2fr 3em;grid-template-areas:"current next" "current note" "info    note"}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;position:relative;overflow:hidden}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;position:absolute;pointer-events:none;top:20px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{-webkit-filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:transparent;border:0;display:block;-webkit-filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;position:absolute;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;top:20px;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#ddd;grid-area:note}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{margin:20px;width:calc(100% - 40px);height:calc(100% - 40px);box-sizing:border-box;overflow:auto;padding-right:3px;white-space:pre-wrap;word-wrap:break-word;scrollbar-width:thin;scrollbar-color:hsla(0,0%,86.7%,.5) transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:hsla(0,0%,86.7%,.5);border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#ddd;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{display:block;box-sizing:border-box;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#p>svg>foreignObject>section h1{font-size:2em;margin:0.67em 0}div#p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#p>svg>foreignObject>section{page-break-before:always;break-before:page}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;color-adjust:exact!important}div#p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{display:block;height:auto;width:100%}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{position:static}}div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{content:""}@supports (-ms-ime-align:auto){div#p>svg>foreignObject>section svg[data-marp-fitting=svg].__reflow__{position:relative}}div#p>svg>foreignObject>section [data-marp-fitting-svg-content]{display:table;white-space:nowrap}div#p>svg>foreignObject>section [data-marp-fitting-svg-content-wrap]{white-space:pre}div#p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+/*!
+ * Marp / Marpit Uncover theme
+ *
+ * @theme uncover
+ * @author Yuki Hattori
+ *
+ * @auto-scaling fittingHeader,math
+ * @size 4:3 960px 720px
+ */div#p>svg>foreignObject>section{-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;flex-wrap:nowrap;font-size:40px;height:720px;-webkit-box-pack:center;justify-content:center;letter-spacing:3px;line-height:1.4;padding:30px 70px;position:relative;text-align:center;width:1280px;word-wrap:break-word;z-index:0;background:#fdfcff;color:#202228}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section:after{display:-webkit-box;display:flex}div#p>svg>foreignObject>section:after{-webkit-box-align:end;align-items:flex-end;font-size:.6em;height:80px;-webkit-box-pack:end;justify-content:flex-end;padding:30px;text-align:right;width:80px;background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1 1" width="1" height="1"><path d="M0 1h1v-1Z" fill="rgba(32, 34, 40, 0.05)"/></svg>') no-repeat 50%;background-size:cover;color:#202228;text-shadow:0 0 5px #fdfcff}div#p>svg>foreignObject>section code,div#p>svg>foreignObject>section pre{background:#f2f1f4;color:#202228}div#p>svg>foreignObject>section a{color:#009dd5}div#p>svg>foreignObject>section a:hover{color:#087eaa}div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section h2 strong,div#p>svg>foreignObject>section h3 strong,div#p>svg>foreignObject>section h4 strong,div#p>svg>foreignObject>section h5 strong,div#p>svg>foreignObject>section h6 strong{color:#33b1dd}div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{color:rgba(32,34,40,.4);text-shadow:0 1px 0 rgba(253,252,255,.8)}div#p>svg>foreignObject>section mark{color:#009dd5;background:transparent}div#p>svg>foreignObject>section:not(.invert) .hljs{display:block;overflow-x:auto;padding:.5em;background:#fff}div#p>svg>foreignObject>section:not(.invert) .hljs,div#p>svg>foreignObject>section:not(.invert) .hljs-subst{color:#000}div#p>svg>foreignObject>section:not(.invert) .hljs-addition,div#p>svg>foreignObject>section:not(.invert) .hljs-meta,div#p>svg>foreignObject>section:not(.invert) .hljs-string,div#p>svg>foreignObject>section:not(.invert) .hljs-symbol,div#p>svg>foreignObject>section:not(.invert) .hljs-template-tag,div#p>svg>foreignObject>section:not(.invert) .hljs-template-variable{color:#756bb1}div#p>svg>foreignObject>section:not(.invert) .hljs-comment,div#p>svg>foreignObject>section:not(.invert) .hljs-quote{color:#636363}div#p>svg>foreignObject>section:not(.invert) .hljs-bullet,div#p>svg>foreignObject>section:not(.invert) .hljs-link,div#p>svg>foreignObject>section:not(.invert) .hljs-literal,div#p>svg>foreignObject>section:not(.invert) .hljs-number,div#p>svg>foreignObject>section:not(.invert) .hljs-regexp{color:#31a354}div#p>svg>foreignObject>section:not(.invert) .hljs-deletion,div#p>svg>foreignObject>section:not(.invert) .hljs-variable{color:#88f}div#p>svg>foreignObject>section:not(.invert) .hljs-built_in,div#p>svg>foreignObject>section:not(.invert) .hljs-doctag,div#p>svg>foreignObject>section:not(.invert) .hljs-keyword,div#p>svg>foreignObject>section:not(.invert) .hljs-name,div#p>svg>foreignObject>section:not(.invert) .hljs-section,div#p>svg>foreignObject>section:not(.invert) .hljs-selector-class,div#p>svg>foreignObject>section:not(.invert) .hljs-selector-id,div#p>svg>foreignObject>section:not(.invert) .hljs-selector-tag,div#p>svg>foreignObject>section:not(.invert) .hljs-strong,div#p>svg>foreignObject>section:not(.invert) .hljs-tag,div#p>svg>foreignObject>section:not(.invert) .hljs-title,div#p>svg>foreignObject>section:not(.invert) .hljs-type{color:#3182bd}div#p>svg>foreignObject>section:not(.invert) .hljs-emphasis{font-style:italic}div#p>svg>foreignObject>section:not(.invert) .hljs-attribute{color:#e6550d}div#p>svg>foreignObject>section.invert{background:#202228;color:#fff}div#p>svg>foreignObject>section.invert:after{background:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1 1" width="1" height="1"><path d="M0 1h1v-1Z" fill="rgba(255, 255, 255, 0.05)"/></svg>') no-repeat 50%;background-size:cover;color:#fff;text-shadow:0 0 5px #202228}div#p>svg>foreignObject>section.invert code,div#p>svg>foreignObject>section.invert pre{background:#2b2d33;color:#fff}div#p>svg>foreignObject>section.invert a{color:#60d0f0}div#p>svg>foreignObject>section.invert a:hover{color:#88dcf4}div#p>svg>foreignObject>section.invert h1 strong,div#p>svg>foreignObject>section.invert h2 strong,div#p>svg>foreignObject>section.invert h3 strong,div#p>svg>foreignObject>section.invert h4 strong,div#p>svg>foreignObject>section.invert h5 strong,div#p>svg>foreignObject>section.invert h6 strong{color:#80d9f3}div#p>svg>foreignObject>section.invert footer,div#p>svg>foreignObject>section.invert header{color:hsla(0,0%,100%,.4);text-shadow:0 1px 0 rgba(32,34,40,.8)}div#p>svg>foreignObject>section.invert mark{color:#60d0f0;background:transparent}div#p>svg>foreignObject>section.invert .hljs{display:block;overflow-x:auto;padding:.5em;background:#222;color:#fff}div#p>svg>foreignObject>section.invert .hljs-comment,div#p>svg>foreignObject>section.invert .hljs-quote{color:#777}div#p>svg>foreignObject>section.invert .hljs-built_in,div#p>svg>foreignObject>section.invert .hljs-builtin-name,div#p>svg>foreignObject>section.invert .hljs-bullet,div#p>svg>foreignObject>section.invert .hljs-deletion,div#p>svg>foreignObject>section.invert .hljs-link,div#p>svg>foreignObject>section.invert .hljs-literal,div#p>svg>foreignObject>section.invert .hljs-meta,div#p>svg>foreignObject>section.invert .hljs-number,div#p>svg>foreignObject>section.invert .hljs-params,div#p>svg>foreignObject>section.invert .hljs-regexp,div#p>svg>foreignObject>section.invert .hljs-symbol,div#p>svg>foreignObject>section.invert .hljs-tag,div#p>svg>foreignObject>section.invert .hljs-template-variable,div#p>svg>foreignObject>section.invert .hljs-variable{color:#ab875d}div#p>svg>foreignObject>section.invert .hljs-attribute,div#p>svg>foreignObject>section.invert .hljs-name,div#p>svg>foreignObject>section.invert .hljs-section,div#p>svg>foreignObject>section.invert .hljs-selector-class,div#p>svg>foreignObject>section.invert .hljs-selector-id,div#p>svg>foreignObject>section.invert .hljs-title,div#p>svg>foreignObject>section.invert .hljs-type{color:#9b869b}div#p>svg>foreignObject>section.invert .hljs-addition,div#p>svg>foreignObject>section.invert .hljs-keyword,div#p>svg>foreignObject>section.invert .hljs-selector-tag,div#p>svg>foreignObject>section.invert .hljs-string{color:#8f9c6c}div#p>svg>foreignObject>section.invert .hljs-emphasis{font-style:italic}div#p>svg>foreignObject>section.invert .hljs-strong{font-weight:700}div#p>svg>foreignObject>section>:first-child,div#p>svg>foreignObject>section[data-header]>:nth-child(2){margin-top:0}div#p>svg>foreignObject>section>:last-child,div#p>svg>foreignObject>section[data-footer]>:nth-last-child(2){margin-bottom:0}div#p>svg>foreignObject>section svg[data-marp-fitting=svg]{max-height:660px;--preserve-aspect-ratio:xMidYMid meet}div#p>svg>foreignObject>section blockquote,div#p>svg>foreignObject>section p{margin:0 0 15px}div#p>svg>foreignObject>section h1,div#p>svg>foreignObject>section h2,div#p>svg>foreignObject>section h3,div#p>svg>foreignObject>section h4,div#p>svg>foreignObject>section h5,div#p>svg>foreignObject>section h6{margin:15px 0 30px}div#p>svg>foreignObject>section h1 strong,div#p>svg>foreignObject>section h2 strong,div#p>svg>foreignObject>section h3 strong,div#p>svg>foreignObject>section h4 strong,div#p>svg>foreignObject>section h5 strong,div#p>svg>foreignObject>section h6 strong{font-weight:inherit}div#p>svg>foreignObject>section h1{font-size:2em}div#p>svg>foreignObject>section h2{font-size:1.7em}div#p>svg>foreignObject>section h3{font-size:1.4em;letter-spacing:2px}div#p>svg>foreignObject>section h4{font-size:1.2em;letter-spacing:2px}div#p>svg>foreignObject>section h5{font-size:1em;letter-spacing:1px}div#p>svg>foreignObject>section h6{font-size:.8em;letter-spacing:1px}div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{position:absolute;z-index:1;left:70px;right:70px;font-size:.45em;letter-spacing:1px}div#p>svg>foreignObject>section header{top:30px}div#p>svg>foreignObject>section footer{bottom:30px}div#p>svg>foreignObject>section a{text-decoration:none}div#p>svg>foreignObject>section a:hover{text-decoration:underline}div#p>svg>foreignObject>section ol,div#p>svg>foreignObject>section ul{margin:0 auto;text-align:left}div#p>svg>foreignObject>section>ol,div#p>svg>foreignObject>section>ul{margin-bottom:15px}div#p>svg>foreignObject>section code,div#p>svg>foreignObject>section pre{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;letter-spacing:0;margin:-.2em .2em .2em;padding:.2em}div#p>svg>foreignObject>section pre{box-shadow:0 4px 8px rgba(0,0,0,.2);font-size:70%;line-height:1.15;margin:15px auto 30px;min-width:40%;padding:.4em .6em;text-align:left}div#p>svg>foreignObject>section pre>code{margin:0;padding:0}div#p>svg>foreignObject>section table{border-collapse:collapse;margin:0 auto 15px}div#p>svg>foreignObject>section table>tbody>tr>td,div#p>svg>foreignObject>section table>tbody>tr>th,div#p>svg>foreignObject>section table>thead>tr>td,div#p>svg>foreignObject>section table>thead>tr>th{padding:.15em .5em}div#p>svg>foreignObject>section table>thead>tr>td,div#p>svg>foreignObject>section table>thead>tr>th{border-bottom:3px solid}div#p>svg>foreignObject>section table>tbody>tr:not(:last-child)>td,div#p>svg>foreignObject>section table>tbody>tr:not(:last-child)>th{border-bottom:1px solid}div#p>svg>foreignObject>section blockquote{font-size:90%;line-height:1.3;padding:0 2em;position:relative;z-index:0}div#p>svg>foreignObject>section blockquote:after,div#p>svg>foreignObject>section blockquote:before{content:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNNDQgMTkuM0wzOC45NCAwQzguMTQgOS41OSAwIDQwLjA1IDAgNTQuODNWMTAwaDQxLjQ3VjU0LjgzaC0yM2MtLjA0LS4yOC4yNS0yNy42NiAyNS41My0zNS41M3ptNTYgMEw5NC45NCAwQzY0LjE0IDkuNTkgNTYgNDAuMDUgNTYgNTQuODNWMTAwaDQxLjQ3VjU0LjgzaC0yM2MtLjA0LS4yOC4yNS0yNy42NiAyNS41My0zNS41M3oiIGZpbGw9IiM4ODgiIG9wYWNpdHk9Ii4zMyIvPjwvc3ZnPg==");height:auto;pointer-events:none;position:absolute;width:1em;z-index:-1}div#p>svg>foreignObject>section blockquote:before{left:0;top:0}div#p>svg>foreignObject>section blockquote:after{bottom:0;right:0;-webkit-transform:rotate(180deg);transform:rotate(180deg)}div#p>svg>foreignObject>section blockquote>:last-child{margin-bottom:0}div#p>svg>foreignObject>section[data-marpit-scope-Bp9E8WVN] h2{position:absolute;top:1ex;right:1em}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]{display:block!important;padding:0!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#p>svg>foreignObject>section[data-marpit-advanced-background=content],div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+
+<h1>REST &amp; Laravel</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h2>Themen</h2>
+<ul>
+<li>Wozu Anwendungs-Architekturen?</li>
+<li>Übliche Architekuren</li>
+<li>Beispiel SOAP</li>
+<li>Beispiel REST</li>
+<li>Übliche REST-Architekturen</li>
+<li>Überblick Laravel</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-marpit-scope-Bp9E8WVN="" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;diagram-kosten.svg&quot;);background-size:70%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="3" data-marpit-scope-Bp9E8WVN="" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-advanced-background="content">
+<header>mindkeeper.solutions</header>
+
+<h2>Kostenverlauf</h2>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert lead" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h2>Anforderungen</h2>
+<ul>
+<li>Einfachheit</li>
+<li>Veränderlichkeit</li>
+<li>Übertragbarkeit</li>
+<li>Wiederverwendbarkeit</li>
+<li>Zuverlässigkeit</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h2>Einfachheit</h2>
+<ul>
+<li>Einfache Bausteine sind leicht verständlich.</li>
+<li>Simple Architekturen vereinfachen den Blick auf den Gesamtkontext.</li>
+<li>Einfache Architekturen fördern Nachvollziehbarkeit und Verständlichkeit.</li>
+</ul>
+<blockquote>
+<p>Das Prinzip der Allgemeingültigkeit in modularen Systemen führt zu einheitlichen Konnektoren (Middleware)</p>
+</blockquote>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h2>Veränderlichkeit</h2>
+<ul>
+<li><strong>Evolvierbarkeit</strong> - Weiterentwickeln bestehender Fähigkeiten unter gleichbleibendem Aufand.</li>
+<li><strong>Erweiterbarkeit</strong> - Hinzufügen neuer Fähigkeiten unter gleichbleibendem Aufwand.</li>
+<li><strong>Anpassbarkeit</strong> - Spezialisieren der Architektur für unvorhergesehene Anforderungen.</li>
+<li><strong>Konfigurierbarkeit</strong> - Verhaltenssteuerung der Anwendung in der Bereitstellungsphase.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h2>Wiederverwendbarkeit</h2>
+<p>Mit einem hohen Maß an Wiederverwendbarkeit ermöglicht eine Architektur einzelne Komponenten und Datenelemente auch in anderen Anwendungen eiunzusetzen.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h2>Übertragbarkeit</h2>
+<p>Ein geringes Maß an Systemabhängigkeiten ermöglicht einer Architektur unter geringem Ressourceneinsatz in verschiedenen Laufzeitumgebungen betrieben zu werden.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h2>Zuverlässigkeit</h2>
+<p>Eine zuverlässige Architektur kennzeichnet sich durch ein geringes Risiko eines Systemausfalls durch den teilweisen Ausfall einzelner Systemkomponenten.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h1>Übliche Web-Service-Protokolle</h1>
+<ul>
+<li>XML-RPC (1998)</li>
+<li>SOAP (1998)</li>
+<li>REST (2000)</li>
+<li>gRPC (2015)</li>
+<li>JSON-RPC (2008)</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h1>SOAP</h1>
+<p>Simple Object Access Protocol</p>
+<pre><code>POST /InStock HTTP/1.1
+Host: www.example.org
+...
+<span class="hljs-meta">&lt;?xml version="1.0"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">soap:Envelope</span> <span class="hljs-attr">xmlns:soap</span>=<span class="hljs-string">"http://www.w3.org/2003/05/soap-envelope"</span> <span class="hljs-attr">xmlns:m</span>=<span class="hljs-string">"http://www.example.org"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap:Header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">soap:Body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">m:GetStockPrice</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">m:StockName</span>&gt;</span>T<span class="hljs-tag">&lt;/<span class="hljs-name">m:StockName</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">m:GetStockPrice</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">soap:Body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">soap:Envelope</span>&gt;</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h1>REST</h1>
+<p>Statuslos<br />
+Cachable<br />
+Vereinheitlichtes Interface (CRUDs)</p>
+<ul>
+<li>Create</li>
+<li>Read</li>
+<li>Update</li>
+<li>Delete</li>
+<li><em>Search</em></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>HTTP Requests</h3>
+<pre><code class="language-text">GET /card HTTP/1.1
+Host: www.example.com
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>HTTP Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Body</th>
+<th>Safe</th>
+<th>Idempotent</th>
+<th>Cacheable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TRACE</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>PATCH</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>Optional</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>Optional</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Optional</td>
+<td>Yes</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h2>Ruby on Rails</h2>
+<ul>
+<li>REST</li>
+<li>Model-View-Control</li>
+<li>Scaffolding</li>
+<li>ActiveRecord ORM</li>
+<li>Migrations</li>
+<li>Convention over Configuration</li>
+<li>Don't Repeat Yourself</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-footer="Von File:ModelViewControllerDiagram.svg: Traced by User:Stannered / *abgeleitetes Werk Davjoh - File:ModelViewControllerDiagram.svg, Gemeinfrei, https://commons.wikimedia.org/w/index.php?curid=10194593" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;ModelViewControllerDiagram2.svg&quot;);background-size:80% auto;filter:invert(1);"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="16" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-footer="Von File:ModelViewControllerDiagram.svg: Traced by User:Stannered / *abgeleitetes Werk Davjoh - File:ModelViewControllerDiagram.svg, Gemeinfrei, https://commons.wikimedia.org/w/index.php?curid=10194593" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;" data-marpit-advanced-background="content">
+<header>mindkeeper.solutions</header>
+<h3>MVC-Pattern</h3>
+<footer>Von File:ModelViewControllerDiagram.svg: Traced by User:Stannered / *abgeleitetes Werk Davjoh - File:ModelViewControllerDiagram.svg, Gemeinfrei, <a href="https://commons.wikimedia.org/w/index.php?curid=10194593">https://commons.wikimedia.org/w/index.php?curid=10194593</a></footer>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert lead" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+
+<h4>Beispiel: MVC-Implementation für Counter</h4>
+<pre><code class="language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CounterModel</span> </span>{
+    <span class="hljs-keyword">public</span> $value = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">watch</span><span class="hljs-params">()</span> </span>{
+        $value = $value + <span class="hljs-number">1</span>;
+    }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CounterController</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">show</span><span class="hljs-params">($id)</span> </span>{
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">'counter-view'</span>, CounterModel::find($id))
+    }
+}
+
+<span class="hljs-comment">// counter-view</span>
+&lt;div&gt;{{ $counter-&gt;value }}&lt;/div&gt;
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h2>Scaffolding</h2>
+<p>Einheitliches Generieren von Projekt-Resssourcen mittels <code>php artisan</code>:</p>
+<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> php artisan</span>
+Available commands:
+ make
+  make:command         Create a new Artisan command
+  make:controller      Create a new controller class
+  make:model           Create a new Eloquent model class
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Beispiel: CounterController</h3>
+<pre><code class="language-shell">php artisan make:controller --resource counter
+</code></pre>
+<p>generiert</p>
+<pre><code class="language-php"><span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Request</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CounterController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">()</span> </span>{...}
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">()</span> </span>{...}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h2>Laravel's Eloquent ORM</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Migrationen</h3>
+<pre><code class="language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreateCountersTable</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">// Run the migrations.</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span> </span>{
+        Schema::create(<span class="hljs-string">'counters'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Blueprint $table)</span> </span>{
+            $table-&gt;bigIncrements(<span class="hljs-string">'id'</span>);
+            $table-&gt;int(<span class="hljs-string">'value'</span>);
+            $table-&gt;timestamps();
+        });
+    }
+
+    <span class="hljs-comment">// Reverse the migrations.</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span> </span>{
+        Schema::drop(<span class="hljs-string">'counters'</span>);
+    }
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Fluent-Schnittstelle</h3>
+<pre><code class="language-php">$counter_12 = Counter::find(<span class="hljs-number">12</span>);
+$counters = Counter::all();
+Counter::delete(<span class="hljs-number">12</span>);
+
+$first_counter = Counter::first()
+$no_of_big_counters = Counter::where(<span class="hljs-string">'value'</span>, <span class="hljs-string">'&gt;'</span>, <span class="hljs-number">5</span>)-&gt;count();
+
+$counter = Counter::firstWhere(<span class="hljs-string">'value'</span>, <span class="hljs-string">'1'</span>);
+$counter-&gt;watch();
+$counter-&gt;save();
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h2>Los geht's</h2>
+<p>mit GIT, Composer &amp; Laravel</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Entitäten</h3>
+<pre><code class="language-shell">+----------+                 +----------+
+|          |                 |          |
+|   Card   +-----------------+   User   |
+|          |                 |          |
++----------+                 +----------+
+|          |                 |          |
+| bg-color |                 | name     |
+|          |                 |          |
++----------+                 +----------+
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Create GitHub Project</h3>
+<p><img src="create-project.png" alt="h:500" style="height:500px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Compose Laravel App</h3>
+<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> composer create-project laravel/laravel laravel-showcase</span>
+Installing laravel/laravel (v7.0.0)
+...
+Package manifest generated successfully.
+<span class="hljs-meta">&gt;</span><span class="bash"> @php artisan key:generate --ansi</span>
+Application key set successfully.
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Project Structure</h3>
+<pre><code class="language-shell">laravel-showcase
+├── app
+├── composer.json
+├── composer.lock
+├── config
+├── database
+├── .editorconfig
+├── .env
+├── .env.example
+├── .gitignore
+├── package.json
+├── README.md
+├── .styleci.yml
+...
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>.editorconfig</h3>
+<pre><code class="language-ini"><span class="hljs-attr">root</span> = <span class="hljs-literal">true</span>
+
+<span class="hljs-section">[*]</span>
+<span class="hljs-attr">charset</span> = utf-<span class="hljs-number">8</span>
+<span class="hljs-attr">end_of_line</span> = lf
+<span class="hljs-attr">insert_final_newline</span> = <span class="hljs-literal">true</span>
+<span class="hljs-attr">indent_style</span> = space
+<span class="hljs-attr">indent_size</span> = <span class="hljs-number">4</span>
+<span class="hljs-attr">trim_trailing_whitespace</span> = <span class="hljs-literal">true</span>
+
+<span class="hljs-section">[*.md]</span>
+<span class="hljs-attr">trim_trailing_whitespace</span> = <span class="hljs-literal">false</span>
+
+<span class="hljs-section">[*.{yml,yaml}]</span>
+<span class="hljs-attr">indent_size</span> = <span class="hljs-number">2</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>.gitignore</h3>
+<pre><code class="language-shell">/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>.env</h3>
+<pre><code class="language-ini"><span class="hljs-attr">APP_NAME</span>=Laravel
+<span class="hljs-attr">APP_ENV</span>=local
+<span class="hljs-attr">APP_KEY</span>=base64:xMb3g0XiNlFX2VQEt2UIwNcT1OksJEk4YSqa/jTgEjg=
+<span class="hljs-attr">APP_DEBUG</span>=<span class="hljs-literal">true</span>
+<span class="hljs-attr">APP_URL</span>=http://localhost
+
+<span class="hljs-attr">LOG_CHANNEL</span>=stack
+
+<span class="hljs-attr">DB_CONNECTION</span>=mysql
+<span class="hljs-attr">DB_HOST</span>=<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>
+<span class="hljs-attr">DB_PORT</span>=<span class="hljs-number">3306</span>
+<span class="hljs-attr">DB_DATABASE</span>=laravel
+<span class="hljs-attr">DB_USERNAME</span>=root
+<span class="hljs-attr">DB_PASSWORD</span>=
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>composer.json</h3>
+<pre><code class="language-json">{
+    <span class="hljs-attr">"name"</span>: <span class="hljs-string">"laravel/laravel"</span>,
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"project"</span>,
+    <span class="hljs-attr">"description"</span>: <span class="hljs-string">"The Laravel Framework."</span>,
+    <span class="hljs-attr">"license"</span>: <span class="hljs-string">"MIT"</span>,
+    <span class="hljs-attr">"require"</span>: {
+        <span class="hljs-attr">"php"</span>: <span class="hljs-string">"^7.2.5"</span>,
+        <span class="hljs-attr">"fideloper/proxy"</span>: <span class="hljs-string">"^4.2"</span>,
+        <span class="hljs-attr">"fruitcake/laravel-cors"</span>: <span class="hljs-string">"^1.0"</span>,
+        <span class="hljs-attr">"guzzlehttp/guzzle"</span>: <span class="hljs-string">"^6.3"</span>,
+        <span class="hljs-attr">"laravel/framework"</span>: <span class="hljs-string">"^7.0"</span>,
+        <span class="hljs-attr">"laravel/tinker"</span>: <span class="hljs-string">"^2.0"</span>
+    },
+    <span class="hljs-attr">"require-dev"</span>: {
+        <span class="hljs-attr">"phpunit/phpunit"</span>: <span class="hljs-string">"^8.5"</span>,
+        ...
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Entwicklerserver</h3>
+<pre><code class="language-shell">php artisan serve
+</code></pre>
+<p>Stellt aktuellen Stand unter <a href="http://localhost:8000">localhost:8000</a> bereit.</p>
+<p><img src="laravel-welcome.png" alt="h:300" style="height:300px;" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Was passiert da?</h3>
+<pre><code class="language-shell">❯ php artisan route:list
++--------+----------+----------+------+---------+--------------+
+| Domain | Method   | URI      | Name | Action  | Middleware   |
++--------+----------+----------+------+---------+--------------+
+|        | GET|HEAD | /        |      | Closure | web          |
+|        | GET|HEAD | api/user |      | Closure | api,auth:api |
++--------+----------+----------+------+---------+--------------+
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3><code>routes/web.php</code></h3>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Route</span>;
+
+Route::get(<span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> view(<span class="hljs-string">'welcome'</span>);
+});
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Git konfigurieren</h3>
+<pre><code class="language-shell">git init
+git status
+git add --all
+git commit -m "first commit"
+git remote add origin git@github.com:mindkeeper-solutions/laravel-showcase.git
+git push --set-upstream origin master
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Authentifizierung installieren</h3>
+<p>Laravels UI-Paket zu den Abhängigkeiten hinzufügen:</p>
+<p><code>composer require laravel/ui</code></p>
+<p>Dann UI für authentifizierung generieren:</p>
+<pre><code class="language-script">❯ php artisan ui bootstrap --auth
+Bootstrap scaffolding installed successfully.
+Please run &quot;npm install &amp;&amp; npm run dev&quot; to compile your fresh scaffolding.
+Authentication scaffolding generated successfully.
+
+❯ npm i &amp;&amp; npm run dev
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Datenbank SQLite einrichten</h3>
+<p>Datenbank-Datei anlegen:</p>
+<pre><code class="language-shell">touch database/database.sqlite
+</code></pre>
+<p>Datenbank-Konfiguration in <code>.env</code> vornehmen:</p>
+<pre><code class="language-ini"><span class="hljs-attr">DB_CONNECTION</span>=sqlite
+...
+<span class="hljs-attr">DB_DATABASE</span>=&lt;&lt;ABSOLUTER PFAD&gt;&gt;/database/database.sqlite
+<span class="hljs-attr">DB_FOREIGN_KEYS</span>=<span class="hljs-literal">true</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Datenbank migrieren</h3>
+<pre><code class="language-shell">❯ php artisan migrate           
+Migration table created successfully.
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table (0.01 seconds)
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table (0.01 seconds)
+Migrating: 2019_08_19_000000_create_failed_jobs_table
+Migrated:  2019_08_19_000000_create_failed_jobs_table (0.01 seconds)
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Arbeitschritt versionieren</h3>
+<pre><code>❯ git status
+Auf Branch master
+Änderungen, die nicht zum Commit vorgemerkt <span class="hljs-string">sind:</span>
+        geä<span class="hljs-string">ndert:</span>       <span class="hljs-keyword">package</span>.json
+        geä<span class="hljs-string">ndert:</span>       resources<span class="hljs-regexp">/js/</span>bootstrap.js
+        geä<span class="hljs-string">ndert:</span>       resources<span class="hljs-regexp">/sass/</span>app.scss
+        geä<span class="hljs-string">ndert:</span>       routes/web.php
+
+Unversionierte <span class="hljs-string">Dateien:</span>
+        app<span class="hljs-regexp">/Http/</span>Controllers<span class="hljs-regexp">/Auth/</span>
+        ...
+❯ git add --all
+❯ git commit -m <span class="hljs-string">"Add basic authentication"</span>
+[master <span class="hljs-number">27</span>b1b8b] Add basic authentication
+ <span class="hljs-number">25</span> files changed, <span class="hljs-number">59021</span> insertions(+), <span class="hljs-number">3</span> deletions(-)
+❯ git push
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;github-issue-1.png&quot;);background-size:80% auto;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="40" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;--marpit-advanced-background-split:50%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<header>mindkeeper.solutions</header>
+<h3>Issue basierte Branches</h3>
+<pre><code class="language-shell">git branch iss1-card-resource
+git checkout iss1-card-resource
+</code></pre>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section class="invert lead" style="" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Neue Card-Resource anlegen</h3>
+<pre><code class="language-shell">❯ php artisan make:model -c -m -r Card
+Model created successfully.
+Created Migration: 2020_03_04_161707_create_cards_table
+Controller created successfully.
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Migration anpassen</h3>
+<pre><code class="language-php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreateCardsTable</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Run the migrations.
+     *
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        Schema::create(<span class="hljs-string">'cards'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Blueprint $table)</span> </span>{
+            $table-&gt;id();
+            $table-&gt;timestamps();
+
+            $table-&gt;string(<span class="hljs-string">'bg_color'</span>, <span class="hljs-number">6</span>);
+        });
+    }
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Views erstellen</h3>
+<p>Wir brauchen die folgenden views:</p>
+<ul>
+<li>card/index.blade.php</li>
+<li>card/show.blade.php</li>
+<li>card/create.blade.php</li>
+<li>card/edit.blade.php</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Controller erweitern</h3>
+<p>Jede Action eines Controllers muss eine <strong>Response</strong> zurückgeben.</p>
+<p>Die Response kann manuell zusammengestellt oder mittels Hilfsfunktionen erzeugt werden.</p>
+<p>Beispiele:</p>
+<ul>
+<li><code>view('card.index', ['variable' =&gt; $wert])</code></li>
+<li><code>redirect()-&gt;action('CardController@index')</code></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h4>Persistierung</h4>
+<p>Eloquent erweitert unser Model um Methoden zur Interaktion mit der Datenbank.</p>
+<pre><code class="language-php">$cards = Card::all();
+$card-&gt;save();
+$card-&gt;delete();
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Issue 1 abschließen</h3>
+<p>Da die Ressource hinzugefügt wurde, können wir die Arbeit an dem ersten Issue abschließen.</p>
+<pre><code class="language-shell">git add --all
+git commit -m 'Fix #1 by adding resource Card' 
+git push --set-upstream origin iss1-card-ressource
+git checkout master
+git pull
+git merge iss1-card-ressource
+git push
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Thin Controller - Fat Models</h3>
+<p>Fügen wir dem Model eine Funktion hinzu, die eine Visitenkarte generiert und zurück gibt.</p>
+<pre><code class="language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">get_svg_for_name</span><span class="hljs-params">($name)</span> </span>{
+    <span class="hljs-keyword">return</span> &lt;&lt;&lt;SVG$
+...
+SVG;
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Benutzerdefinierte Actions</h3>
+<p>Controller können um eigene Actions erweitert werden, es kann sinnvoll sein, die Funktion in einen dedizierten Controller auszulagern.</p>
+<pre><code class="language-php"><span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">generate_svg</span><span class="hljs-params">(Card $card)</span>
+</span>{
+    $user = Auth::user();
+
+    $svg_image_source = $card-&gt;get_svg_for_name($user-&gt;name);
+
+    <span class="hljs-keyword">return</span> response()
+        -&gt;make($svg_image_source)
+        -&gt;header(<span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'image/svg+xml'</span>)
+        -&gt;header(<span class="hljs-string">'Content-Length'</span>, strlen($svg_image_source));
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Benutzerdefinierte Routen</h3>
+<p>Benutzerdefinerte Routen können genutzt werden, um die Standard-Ressource-Routen zu ergänzen.</p>
+<pre><code class="language-php">Route::get(<span class="hljs-string">'cards/{card}.svg'</span>, <span class="hljs-string">'CardController@generate_svg'</span>)
+    -&gt;name(<span class="hljs-string">'cards.generate_svg'</span>);
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Relationen abbilden</h3>
+<p>Relationen werden durch das Anlegen von Getter-Methoden im Model und den erforderlichen Schematas eingerichtet:</p>
+<pre><code class="language-php"><span class="hljs-comment">// app/User.php</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cards</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">$this</span>-&gt;belongsToMany(<span class="hljs-string">'App\Card'</span>);
+}
+</code></pre>
+<pre><code class="language-php"><span class="hljs-comment">// database/migrations/2020_03_05_153542_card_user.php</span>
+Schema::create(<span class="hljs-string">'card_user'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Blueprint $table)</span> </span>{
+    $table-&gt;foreignId(<span class="hljs-string">'card_id'</span>);
+    $table-&gt;foreignId(<span class="hljs-string">'user_id'</span>);
+});
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Manipulieren der Beziehung</h3>
+<p>Die Beziehung wird über Collection-Methoden manipuliert.</p>
+<pre><code class="language-php"><span class="hljs-comment">// app/Http/Controllers/CardController.php</span>
+<span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggle_allowance</span><span class="hljs-params">(Card $card)</span>
+</span>{
+    $user = Auth::user();
+    <span class="hljs-keyword">if</span> ($user-&gt;cards-&gt;contains($card) == <span class="hljs-keyword">true</span>) {
+                $user-&gt;cards()-&gt;detach($card);
+    }
+    <span class="hljs-keyword">else</span> {
+        $user-&gt;cards()-&gt;attach($card);
+    }
+
+    <span class="hljs-keyword">return</span> redirect()-&gt;route(<span class="hljs-string">'cards.index'</span>);
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Zugriff Authorisieren</h3>
+<p>Die Authorisierung erfolgt durch leichtgewichtige Gate-Methoden.</p>
+<pre><code class="language-php"><span class="hljs-comment">// app/Providers/AuthServiceProvider.php</span>
+Gate::define(<span class="hljs-string">'generate-svg'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">($user, $card)</span> </span>{
+    <span class="hljs-keyword">return</span> $user-&gt;cards-&gt;contains($card) == <span class="hljs-keyword">true</span>;
+});
+</code></pre>
+<pre><code class="language-php"><span class="hljs-comment">// CardController@generate_svg</span>
+<span class="hljs-keyword">if</span> (Gate::allows(<span class="hljs-string">'generate-svg'</span>, $card))
+{ ... }
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-class="invert lead" data-background-image="linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139))" data-header="mindkeeper.solutions" data-theme="uncover" class="invert lead" style="--class:invert lead;--background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));--header:mindkeeper.solutions;--theme:uncover;background-image:linear-gradient(to bottom, rgb(191, 60, 76), rgb(27, 100, 139));background-position:center;background-repeat:no-repeat;background-size:cover;">
+<header>mindkeeper.solutions</header>
+<h3>Zugriff für restliche Routen einschränken</h3>
+<p>Das Routing lässt sich mit Route Middleware beeinflussen, die <code>auth</code>-middleware lässt das Routing nur für authentifizierte Nutzer zu:</p>
+<pre><code class="language-php">Route::get(<span class="hljs-string">'cards/{card}.svg'</span>, <span class="hljs-string">'CardController@generate_svg'</span>)
+    -&gt;name(<span class="hljs-string">'cards.generate_svg'</span>)
+    -&gt;middleware(<span class="hljs-string">'auth'</span>);
+</code></pre>
+</section>
+<script>!function(){"use strict";function t(t){Array.from(document.getElementsByTagName("svg"),e=>{if(e.hasAttribute("data-marpit-svg")){const{clientHeight:r,clientWidth:a}=e;e.style.transform||(e.style.transform="translateZ(0)");const o=t||e.currentScale||1,i=e.viewBox.baseVal.width/o,n=e.viewBox.baseVal.height/o,s=Math.min(r/n,a/i);Array.from(e.querySelectorAll(":scope > foreignObject"),t=>{const e=t.x.baseVal.value,o=t.y.baseVal.value;Array.from(t.querySelectorAll(":scope > section"),t=>{t.style.transformOrigin||(t.style.transformOrigin="0 0");const l=(a-s*i)/2-e,c=(r-s*n)/2-o;t.style.transform=`translate3d(${l}px,${c}px,0) scale(${s}) translate(${e}px,${o}px)`})})}})}const e=(t,e,r)=>{if(t.getAttribute(e)!==r)return t.setAttribute(e,r),!0};function r(a=!0){for(const e of"Apple Computer, Inc."===navigator.vendor?[t]:[])e();Array.from(document.querySelectorAll('svg[data-marp-fitting="svg"]'),t=>{const r=t.firstChild,a=r.firstChild,{scrollWidth:o,scrollHeight:i}=a;let n,s=1;if(t.hasAttribute("data-marp-fitting-code")&&(n=t.parentElement.parentElement),t.hasAttribute("data-marp-fitting-math")&&(n=t.parentElement),n){const t=getComputedStyle(n),e=Math.ceil(n.clientWidth-parseFloat(t.paddingLeft)-parseFloat(t.paddingRight));e&&(s=e)}const l=Math.max(o,s),c=Math.max(i,1),p=`0 0 ${l} ${c}`;e(r,"width",`${l}`),e(r,"height",`${c}`),e(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),e(t,"viewBox",p)&&t.classList.toggle("__reflow__")}),a&&window.requestAnimationFrame(()=>r(a))}!function(){if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");window.marpCoreBrowserScript?console.warn("Marp Core's browser script has already executed."):(Object.defineProperty(window,"marpCoreBrowserScript",{value:!0}),r())}()}();
+</script></foreignObject></svg></div><script>!function(){"use strict";var e=function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),s=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,(function(e){return"SCRIPT"!==e.nodeName})),o={},a=function(e,t){return(t=t||{}).index=s.indexOf(e),t.slide=e,t},i=function(e,t){o[e]=(o[e]||[]).filter((function(e){return e!==t}))},l=function(e,t){return(o[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},c=function(e,t){s[e]&&(n&&l("deactivate",a(n,t)),n=s[e],l("activate",a(n,t)))},d=function(e,t){var r=s.indexOf(n)+e;l(e>0?"next":"prev",a(n,t))&&c(r,t)},u={off:i,on:function(e,t){return(o[e]||(o[e]=[])).push(t),i.bind(null,e,t)},fire:l,slide:function(e,t){if(!arguments.length)return s.indexOf(n);l("slide",a(s[e],t))&&c(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:s,destroy:function(e){l("destroy",a(n,e)),o={}}};return(t||[]).forEach((function(e){e(u)})),n||c(0),u};function t(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.map(e=>e.classList.add("bespoke-marp-slide")),e.on("activate",t=>{e.slides.map(e=>e.classList.remove("bespoke-marp-active")),t.slide.classList.add("bespoke-marp-active")})}function n(e=2e3){return t=>{let n;function r(){n&&clearTimeout(n),n=setTimeout(()=>{t.parent.classList.add("bespoke-marp-inactive")},e),t.parent.classList.remove("bespoke-marp-inactive")}document.addEventListener("mousedown",r),document.addEventListener("mousemove",r),document.addEventListener("touchend",r),setTimeout(r,0)}}const r=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"];function s(e){e.parent.addEventListener("keydown",e=>{if(!e.target)return;const t=e.target;(r.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()})}function o(e){window.addEventListener("load",()=>{for(const t of e.slides){const e=t.querySelector("[data-marp-fitting]")?"":"hideable";t.setAttribute("data-bespoke-marp-load",e)}})}function a(e){let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],s=(r,s)=>{t=r,n=s,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const o=t<r||t===r&&n<=s;e.setAttribute("data-bespoke-marp-fragment",o?"active":"inactive"),t===r&&n===s?e.setAttribute("data-bespoke-marp-current-fragment","current"):e.removeAttribute("data-bespoke-marp-current-fragment")})}),e.fragmentIndex=s;const o={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:s};e.fire("fragment",o)};e.on("next",()=>{if(r(1))return s(t,n+1),!1;const o=t+1;e.fragments[o]&&s(o,0)}),e.on("prev",()=>{if(r(-1))return s(t,n-1),!1;const o=t-1;e.fragments[o]&&s(o,e.fragments[o].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const s=e.fragments[t];if(s){const{length:e}=s;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}s(t,r)}),s(0,0)}var i,l=function(e,t){return e(t={exports:{}},t.exports),t.exports}((function(e){
+/*!
+  * screenfull
+  * v5.0.2 - 2020-02-13
+  * (c) Sindre Sorhus; MIT License
+  */
+!function(){var t="undefined"!=typeof window&&void 0!==window.document?window.document:{},n=e.exports,r=function(){for(var e,n=[["requestFullscreen","exitFullscreen","fullscreenElement","fullscreenEnabled","fullscreenchange","fullscreenerror"],["webkitRequestFullscreen","webkitExitFullscreen","webkitFullscreenElement","webkitFullscreenEnabled","webkitfullscreenchange","webkitfullscreenerror"],["webkitRequestFullScreen","webkitCancelFullScreen","webkitCurrentFullScreenElement","webkitCancelFullScreen","webkitfullscreenchange","webkitfullscreenerror"],["mozRequestFullScreen","mozCancelFullScreen","mozFullScreenElement","mozFullScreenEnabled","mozfullscreenchange","mozfullscreenerror"],["msRequestFullscreen","msExitFullscreen","msFullscreenElement","msFullscreenEnabled","MSFullscreenChange","MSFullscreenError"]],r=0,s=n.length,o={};r<s;r++)if((e=n[r])&&e[1]in t){for(r=0;r<e.length;r++)o[n[0][r]]=e[r];return o}return!1}(),s={change:r.fullscreenchange,error:r.fullscreenerror},o={request:function(e){return new Promise(function(n,s){var o=function(){this.off("change",o),n()}.bind(this);this.on("change",o);var a=(e=e||t.documentElement)[r.requestFullscreen]();a instanceof Promise&&a.then(o).catch(s)}.bind(this))},exit:function(){return new Promise(function(e,n){if(this.isFullscreen){var s=function(){this.off("change",s),e()}.bind(this);this.on("change",s);var o=t[r.exitFullscreen]();o instanceof Promise&&o.then(s).catch(n)}else e()}.bind(this))},toggle:function(e){return this.isFullscreen?this.exit():this.request(e)},onchange:function(e){this.on("change",e)},onerror:function(e){this.on("error",e)},on:function(e,n){var r=s[e];r&&t.addEventListener(r,n,!1)},off:function(e,n){var r=s[e];r&&t.removeEventListener(r,n,!1)},raw:r};r?(Object.defineProperties(o,{isFullscreen:{get:function(){return Boolean(t[r.fullscreenElement])}},element:{enumerable:!0,get:function(){return t[r.fullscreenElement]}},isEnabled:{enumerable:!0,get:function(){return Boolean(t[r.fullscreenEnabled])}}}),n?e.exports=o:window.screenfull=o):n?e.exports={isEnabled:!1}:window.screenfull={isEnabled:!1}}()}));l.isEnabled;function c(e){e.fullscreen=()=>{l.isEnabled&&l.toggle(document.body)},document.addEventListener("keydown",t=>{70!==t.which&&122!==t.which||t.altKey||t.ctrlKey||t.metaKey||!l.isEnabled||(e.fullscreen(),t.preventDefault())})}function d(e={}){const t=Object.assign({interval:200},e);return e=>{document.addEventListener("keydown",t=>{(32===t.which&&t.shiftKey||33===t.which||37===t.which||38===t.which)&&e.prev(),(32===t.which&&!t.shiftKey||34===t.which||39===t.which||40===t.which)&&e.next(),35===t.which&&e.slide(e.slides.length-1,{fragment:-1}),36===t.which&&e.slide(0)});let n,r,s=0;e.parent.addEventListener("wheel",o=>{let a=!1;const l=(e,t)=>{e&&(a=a||function(e,t){return function(e,t){const n=t===i.X?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]}(e,t)&&function(e,t){const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r}(getComputedStyle(e),t)}(e,t)),(null==e?void 0:e.parentElement)&&l(e.parentElement,t)};if(0!==o.deltaX&&l(o.target,i.X),0!==o.deltaY&&l(o.target,i.Y),a)return;o.preventDefault(),r&&clearTimeout(r),r=setTimeout(()=>{n=0},t.interval);const c=Date.now()-s<t.interval,d=Math.sqrt(Math.pow(o.deltaX,2)+Math.pow(o.deltaY,2)),u=d<=n;if(n=d,c||u)return;let f;(o.deltaX>0||o.deltaY>0)&&(f="next"),(o.deltaX<0||o.deltaY<0)&&(f="prev"),f&&(e[f](),s=Date.now())})}}function u(e=".bespoke-marp-osc"){const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[data-bespoke-marp-osc=${JSON.stringify(e)}]`).forEach(n)};return l.isEnabled||n("fullscreen",e=>e.style.display="none"),e=>{t.addEventListener("click",t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;switch(n&&t.target.blur(),n){case"next":e.next();break;case"prev":e.prev();break;case"fullscreen":"function"==typeof e.fullscreen&&l.isEnabled&&e.fullscreen();break;case"presenter":e.openPresenterView()}}}),e.parent.appendChild(t),e.on("activate",({index:t})=>{n("page",n=>n.textContent=`Page ${t+1} of ${e.slides.length}`)}),e.on("fragment",({index:t,fragments:r,fragmentIndex:s})=>{n("prev",e=>e.disabled=0===t&&0===s),n("next",n=>n.disabled=t===e.slides.length-1&&s===r.length-1)}),l.isEnabled&&l.onchange(()=>n("fullscreen",e=>e.classList.toggle("exit",l.isEnabled&&l.isFullscreen)))}}!function(e){e.X="X",e.Y="Y"}(i||(i={}));const f=(...e)=>history.replaceState(...e);var p;!function(e){e.Normal="",e.Presenter="presenter",e.Next="next"}(p||(p={}));const m=(e,{protocol:t,host:n,pathname:r,hash:s}=location)=>{const o=e.toString();return`${t}//${n}${r}${o?"?":""}${o}${s}`},h=()=>{switch(document.body.getAttribute("data-bespoke-view")){case p.Normal:return p.Normal;case p.Presenter:return p.Presenter;case p.Next:return p.Next;default:throw new Error("View mode is not assigned.")}},g=e=>new URLSearchParams(location.search).get(e),b=(e,t={})=>{const n=Object.assign({location:location,setter:f},t),r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter(null,document.title,m(r,n.location))}catch(e){console.error(e)}};function v(){const e=Math.max(Math.floor(.85*window.innerWidth),640),t=Math.max(Math.floor(.85*window.innerHeight),360);return window.open(this.presenterUrl,`bespoke-marp-presenter-${this.syncKey}`,`width=${e},height=${t},menubar=no,toolbar=no`)}function w(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),m(e)}var x=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"];let y=e=>String(e).replace(/[&<>"']/g,e=>`&${E[e]};`),E={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},k="dangerouslySetInnerHTML",L={className:"class",htmlFor:"for"},S={};function P(e,t){let n=[],r="";t=t||{};for(let e=arguments.length;e-- >2;)n.push(arguments[e]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(let e in t)!1!==t[e]&&null!=t[e]&&e!==k&&(r+=` ${L[e]?L[e]:y(e)}="${y(t[e])}"`);r+=">"}if(-1===x.indexOf(e)){if(t[k])r+=t[k].__html;else for(;n.length;){let e=n.pop();if(e)if(e.pop)for(let t=e.length;t--;)n.push(e[t]);else r+=!0===S[e]?e:y(e)}r+=e?`</${e}>`:""}return S[r]=!0,r}const I=({children:e})=>P(null,null,...e),M="bespoke-marp-presenter-container",N="bespoke-marp-presenter-next",$="bespoke-marp-presenter-next-container",F="bespoke-marp-presenter-note-container",O="bespoke-marp-presenter-info-container",T="bespoke-marp-presenter-info-page",q="bespoke-marp-presenter-info-page-text",C="bespoke-marp-presenter-info-page-prev",j="bespoke-marp-presenter-info-page-next",A="bespoke-marp-presenter-info-time",K="bespoke-marp-presenter-info-timer";function R(e){const{title:t}=document;document.title=`[Presenter view]${t?` - ${t}`:""}`;const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=M,t.appendChild(e),t.insertAdjacentHTML("beforeend",P(I,null,P("div",{class:$},P("iframe",{class:N,src:"?view=next"})),P("div",{class:F}),P("div",{class:O},P("div",{class:T},P("button",{class:C,tabindex:"-1",title:"Previous"},"Previous"),P("span",{class:q}),P("button",{class:j,tabindex:"-1",title:"Next"},"Next")),P("time",{class:A,title:"Current time"}),P("div",{class:K})))),t})(e.parent)),(e=>{r($).addEventListener("click",()=>e.next());const t=r(N),n=(s=t,(e,t)=>s.contentWindow.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin));var s;t.addEventListener("load",()=>{r($).classList.add("active"),n(e.slide(),e.fragmentIndex),e.on("fragment",({index:e,fragmentIndex:t})=>n(e,t))});const o=document.querySelectorAll(".bespoke-marp-note");o.forEach(e=>{e.addEventListener("keydown",e=>e.stopPropagation()),r(F).appendChild(e)}),e.on("activate",()=>o.forEach(t=>t.classList.toggle("active",t.dataset.index==e.slide()))),e.on("activate",({index:t})=>{r(q).textContent=`${t+1} / ${e.slides.length}`});const a=r(C),i=r(j);a.addEventListener("click",()=>{a.blur(),e.prev()}),i.addEventListener("click",()=>{i.blur(),e.next()}),e.on("fragment",({index:t,fragments:n,fragmentIndex:r})=>{a.disabled=0===t&&0===r,i.disabled=t===e.slides.length-1&&r===n.length-1});const l=()=>r(A).textContent=(new Date).toLocaleTimeString();l(),setInterval(l,250)})(e)}function U(e){const t=h();return t===p.Next&&e.appendChild(document.createElement("span")),e=>{t===p.Normal&&function(e){if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:v},presenterUrl:{enumerable:!0,get:w}}),document.addEventListener("keydown",t=>{80!==t.which||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())})}(e),t===p.Presenter&&R(e),t===p.Next&&function(e){const t=t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");e.slide(Number.parseInt(t,10),{fragment:Number.parseInt(n,10)}),e.next()}};window.addEventListener("message",t),e.on("destroy",()=>window.removeEventListener("message",t))}(e)}}function V(e){e.on("activate",t=>{document.querySelectorAll(".bespoke-progress-bar").forEach(n=>{n.style.flexBasis=`${100*t.index/(e.slides.length-1)}%`})})}const X=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t};function D(e={}){const t=Object.assign({history:!0},e);return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},s=(t={fragment:!0})=>{((t,n)=>{const{fragments:r,slides:s}=e,o=Math.max(0,Math.min(t,s.length-1)),a=Math.max(0,Math.min(n||0,r[o].length-1));o===e.slide()&&a===e.fragmentIndex||e.slide(o,{fragment:a})})((X(location.hash.slice(1))||1)-1,t.fragment?X(g("f")||""):null)};e.on("fragment",({index:e,fragmentIndex:r})=>{n||b({f:0===r||r.toString()},{location:Object.assign(Object.assign({},location),{hash:`#${e+1}`}),setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})}),setTimeout(()=>{s(),window.addEventListener("hashchange",()=>r(()=>{s({fragment:!1}),b({f:void 0})})),window.addEventListener("popstate",()=>{n||r(()=>s())}),n=!1},0)}}for(var Y=self.crypto||self.msCrypto,B="-_",z=36;z--;)B+=z.toString(36);for(z=36;z---10;)B+=z.toString(36).toUpperCase();function H(e={}){const t=e.key||function(e){var t="",n=Y.getRandomValues(new Uint8Array(e||21));for(z=e||21;z--;)t+=B[63&n[z]];return t}(),n=`bespoke-marp-sync-${t}`,r=()=>{const e=localStorage.getItem(n);return e?JSON.parse(e):Object.create(null)},s=e=>{const t=r(),s=Object.assign(Object.assign({},t),e(t));return localStorage.setItem(n,JSON.stringify(s)),s};return s(e=>({reference:(e.reference||0)+1})),e=>{Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let o=!0;setTimeout(()=>{e.on("fragment",e=>{o&&s(()=>({index:e.index,fragmentIndex:e.fragmentIndex}))})},0),window.addEventListener("storage",t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),r=JSON.parse(t.newValue);if(n.index!==r.index||n.fragmentIndex!==r.fragmentIndex)try{o=!1,e.slide(r.index,{fragment:r.fragmentIndex})}finally{o=!0}}}),e.on("destroy",()=>{const{reference:e}=r();void 0===e||e<=1?localStorage.removeItem(n):s(()=>({reference:e-1}))})}}function J(e={}){const t=Object.assign({slope:Math.tan(-35*Math.PI/180),swipeThreshold:30},e);return e=>{let n;const r=e.parent,s=e=>{const t=r.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};r.addEventListener("touchstart",e=>{n=1===e.touches.length?s(e.touches[0]):void 0}),r.addEventListener("touchmove",e=>{if(n)if(1===e.touches.length){e.preventDefault();const t=s(e.touches[0]),r=t.x-n.x,o=t.y-n.y;n.delta=Math.sqrt(Math.pow(Math.abs(r),2)+Math.pow(Math.abs(o),2)),n.radian=Math.atan2(r,o)}else n=void 0}),r.addEventListener("touchend",r=>{if(n){if(n.delta&&n.delta>=t.swipeThreshold){let s=n.radian-t.slope;s=(s+Math.PI)%(2*Math.PI)-Math.PI,e[s<0?"next":"prev"](),r.stopPropagation()}n=void 0}})}}const W=[p.Normal,p.Presenter,p.Next];!function(r=document.getElementById("p")){document.body.setAttribute("data-bespoke-view",(()=>{switch(g("view")){case"next":return p.Next;case"presenter":return p.Presenter;default:return p.Normal}})());const i=(e=>{const t=g(e);return b({[e]:void 0}),t})("sync")||void 0,l=!1,f=!0,m=e(r,((...e)=>{const t=W.findIndex(e=>h()===e);if(t<0)throw new Error("Invalid view");return e.map(([e,n])=>e[t]&&n).filter(e=>e)})([[f,f,l],H({key:i})],[[f,f,f],U(r)],[[f,f,l],s],[[f,f,f],t],[[f,l,l],n()],[[f,f,f],o],[[f,f,f],D({history:!1})],[[f,f,l],d()],[[f,f,l],c],[[f,l,l],V],[[f,f,l],J()],[[f,l,l],u()],[[f,f,f],a]));window.addEventListener("beforeunload",()=>b({sync:m.syncKey})),window.addEventListener("unload",()=>m.destroy())}()}();
+</script></body></html>
