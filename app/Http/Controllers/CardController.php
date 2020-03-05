@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Card;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class CardController extends Controller
 {
@@ -108,12 +109,15 @@ class CardController extends Controller
     {
         $user = Auth::user();
 
-        $svg_image_source = $card->get_svg_for_name($user->name);
+        if (Gate::allows('generate-svg', $card))
+        {
+            $svg_image_source = $card->get_svg_for_name($user->name);
 
-        return response()
-            ->make($svg_image_source)
-            ->header('Content-Type', 'image/svg+xml')
-            ->header('Content-Length', strlen($svg_image_source));
+            return response()
+                ->make($svg_image_source)
+                ->header('Content-Type', 'image/svg+xml')
+                ->header('Content-Length', strlen($svg_image_source));
+        }
     }
 
     // Toggle the rightg to use the given business card for the actual user.

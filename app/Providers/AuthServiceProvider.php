@@ -25,6 +25,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('generate-svg', function ($user, $card) {
+            return $user->cards->contains($card) == true;
+        });
     }
 }
