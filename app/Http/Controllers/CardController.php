@@ -15,9 +15,15 @@ class CardController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $cards = Card::all();
 
-        return view('card.index', ['cards' => $cards]);
+        $cards_with_allowance = $cards->map(function ($card, $_key) use($user) {
+            $card->is_allowed = $user->cards->contains($card) == true;
+            return $card;
+        });
+
+        return view('card.index', ['cards' => $cards_with_allowance]);
     }
 
     /**
@@ -109,4 +115,21 @@ class CardController extends Controller
             ->header('Content-Type', 'image/svg+xml')
             ->header('Content-Length', strlen($svg_image_source));
     }
-}
+
+    // Toggle the rightg to use the given business card for the actual user.
+    public function toggle_allowance(Card $card)
+    {
+        $user = Auth::user();
+
+        if ($user->cards->contains($card) == true)
+        {
+            $user->cards()->detach($card);
+        }
+        else
+        {
+            $user->cards()->attach($card);
+        }
+
+        return redirect()->route('cards.index');
+    }
+}https://www.php.net/manual-lookup.php?pattern=%3F&scope=quickref

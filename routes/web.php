@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('cards/{card}.svg', 'CardController@generate_svg')->name('cards.generate_svg');
+Route::get('cards/{card}/toggle-allowance', 'CardController@toggle_allowance')->name('cards.toggle_allowance');
 Route::resource('cards', 'CardController');
 
 
